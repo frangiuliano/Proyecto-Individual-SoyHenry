@@ -22,14 +22,16 @@ router.post('/', async (req, res) => {
     const totalVideogames = await allVideogames()
     const {name, description, release_date, rating, platforms, created, background_image, genre} = req.body;
     if(totalVideogames.find(e => e.name.replace(/\s+/g, '').toLowerCase() === req.body.name.replace(/\s+/g, '').toLowerCase())){
-        res.status(400).send('Personaje ya existente')
+        res.status(400).send('Videojuego ya existente')
     }else {
     let videogameCreated = await Videogame.create({name, description, release_date, rating, platforms, created: true, background_image})
     let genreDB = await Genre.findAll({where: {name : genre}})
+    console.log(genreDB)
+    // videogameCreated.addGenre(genreDB.name)\
     videogameCreated.addGenre(genreDB)
     // console.log(videogameCreated)
     // console.log(totalVideogames)
-    res.status(200).send('Personaje creado con exito')
+    res.status(200).send('Videojuego creado con exito')
     }
 })
 

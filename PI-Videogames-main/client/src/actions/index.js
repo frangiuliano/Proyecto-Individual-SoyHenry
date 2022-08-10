@@ -27,3 +27,16 @@ export const getGenres = () => async dispatch => {
     const json = await response.json();
     dispatch({type: GET_GENRES, payload: json})
 }
+
+export const orderByNameAndRating = (payload) => {
+    return {type: "ORDER_BY_NAME_AND_RATING", payload}
+}
+
+export const filterVideogamesByGenres = (payload) => {
+    return {type: 'FILTER_BY_GENRES', payload}
+}
+
+export const filterCreated = (payload) => {
+    return {type: "FILTER_CREATED", payload}
+}
+
