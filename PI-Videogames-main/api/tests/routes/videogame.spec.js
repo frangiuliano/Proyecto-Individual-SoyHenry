@@ -1,24 +1,53 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const { expect } = require('chai');
 const session = require('supertest-session');
 const app = require('../../src/app.js');
-const { Videogame, conn } = require('../../src/db.js');
 
 const agent = session(app);
-const videogame = {
-  name: 'Super Mario Bros',
-};
 
-describe('Videogame routes', () => {
-  before(() => conn.authenticate()
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  }));
-  beforeEach(() => Videogame.sync({ force: true })
-    .then(() => Videogame.create(videogame)));
-  describe('GET /videogames', () => {
-    it('should get 200', () =>
-      agent.get('/videogames').expect(200)
-    );
+describe("GET /genres", function() {
+  it("it should has status code 200", function(done) {
+    session(app)
+      agent.get("/genres")
+      .expect(200)
+      .end(function(err, res){
+        if (err) done(err);
+        done();
+      });
+  });
+});
+
+describe("GET /videogames", function() {
+  it("it should has status code 200", function(done) {
+    session(app)
+      agent.get("/videogames")
+      .expect(200)
+      .end(function(err, res){
+        if (err) done(err);
+        done();
+      });
+  });
+});
+
+describe("GET /videogames?name=", function() {
+  it("it should has status code 200", function(done) {
+    session(app)
+      agent.get("/videogames?name=auto")
+      .expect(200)
+      .end(function(err, res){
+        if (err) done(err);
+        done();
+      });
+  });
+});
+
+describe("GET /videogame/:id", function() {
+  it("it should has status code 200", function(done) {
+    session(app)
+      agent.get("/videogame/430")
+      .expect(200)
+      .end(function(err, res){
+        if (err) done(err);
+        done();
+      });
   });
 });

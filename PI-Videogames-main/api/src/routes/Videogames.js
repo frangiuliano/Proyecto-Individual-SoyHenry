@@ -6,11 +6,9 @@ const {Videogame, Genre} = require ('../db')
 router.get('/', async (req, res) => {
     const {name} = req.query
     let totalVideogames = await allVideogames();
-    console.log(totalVideogames)
     if (name){
         const namesVideogames = totalVideogames.filter(e => e.name.toLowerCase().includes (name.toLowerCase()));
         if (namesVideogames.length){
-            console.log(namesVideogames)
             return res.status(200).json(namesVideogames)
         }else{
         return res.status(404).send(`No existen juegos con el nombre ${name}`)}
@@ -26,11 +24,7 @@ router.post('/', async (req, res) => {
     }else {
     let videogameCreated = await Videogame.create({name, description, release_date, rating, platforms, created: true, background_image})
     let genreDB = await Genre.findAll({where: {name : genre}})
-    console.log(genreDB)
-    // videogameCreated.addGenre(genreDB.name)\
     videogameCreated.addGenre(genreDB)
-    // console.log(videogameCreated)
-    // console.log(totalVideogames)
     res.status(200).send('Videojuego creado con exito')
     }
 })

@@ -6,6 +6,9 @@ import {getVideogames, getGenres, filterVideogamesByGenres, filterCreated, order
 import NavBar from '../NavBar/NavBar';
 import Card from '../Videogame/Videogame.jsx'
 import Paginated from '../Paginated/Paginated.jsx'
+import SearchBar from "../SearchBar/SearchBar";
+import styles from './Videogames.module.css'
+
 
 const Videogames = () => {
 
@@ -28,10 +31,10 @@ const Videogames = () => {
         dispatch(getGenres());
     }, [dispatch])
 
-    const handleOnClick = (e) => {
-        e.preventDefault();
-        dispatch(getVideogames())
-    }
+    // const handleOnClick = (e) => {
+    //     e.preventDefault();
+    //     dispatch(getVideogames(e))
+    // }
 
     const handleFilterGenres = (e) => {
         e.preventDefault();
@@ -51,12 +54,9 @@ const Videogames = () => {
     }
 
     return (
-        <div>
+        <div className={styles.fondo}>
             <NavBar/>
             <h1>VIDEOGAMES</h1>
-            <button onClick={e => {handleOnClick(e)}}>
-                Volver a cargar todos los videojuegos
-            </button>
             <div>
                 <select onChange={(e) => handleOrder(e)}>
                     <optgroup label='ALPHABETICAL ORDER'>

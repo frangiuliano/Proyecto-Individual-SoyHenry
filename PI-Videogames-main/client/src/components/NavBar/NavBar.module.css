@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color:rgb(23, 23, 23);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2000px;
+}
+
+.div2{
+    width: 210px;
+    position: absolute;
+    margin-right: 10px;
+}
+
+.videogames {
+    font-family: 'Nova Round', cursive;
+    font-size: 14px;
+    text-decoration: none;
+    list-style: none;
+    color: rgb(216, 216, 216);
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative
+}
+
+.videogames::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: aqua;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.videogames:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+    box-shadow: 0 0 5px aqua;
+}
+
+.createVideogames {
+    font-family: 'Nova Round', cursive;
+    font-size: 14px;
+    text-decoration: none;
+    list-style: none;
+    color: rgb(216, 216, 216);
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative
+}
+
+.createVideogames::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(255, 120, 235);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.createVideogames:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+    box-shadow: 0 0 5px rgb(255, 120, 235);
+}

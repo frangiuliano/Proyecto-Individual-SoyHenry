@@ -1,11 +1,7 @@
-const { Videogame, conn } = require('../../src/db.js');
+const { Genre, Videogame, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
 describe('Videogame model', () => {
-  before(() => conn.authenticate()
-    .catch((err) => {
-      console.error('Unable to connect to the database:', err);
-    }));
   describe('Validators', () => {
     beforeEach(() => Videogame.sync({ force: true }));
     describe('name', () => {
@@ -15,7 +11,12 @@ describe('Videogame model', () => {
           .catch(() => done());
       });
       it('should work when its a valid name', () => {
-        Recipe.create({ name: 'Super Mario Bros' });
+        Videogame.create({ name: 'Grand Theft Auto V' });
+      });
+      it('should return name not found', done => {
+        Videogame.findAll()
+        .then(r => expect(r[1].name).to.be.false('NameNotFound'))
+        .catch(() => done())
       });
     });
   });
