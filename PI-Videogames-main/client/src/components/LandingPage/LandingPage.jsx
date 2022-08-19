@@ -1,13 +1,15 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import styles from "./LandingPage.module.css"
 
 const LandingPage = () => {
     return (
-        <div>
-            <h1>Bienvenidos al PI de Videogames de Fran!</h1>
+        <div className={styles.divGeneral}>
             <NavLink to = '/videogames'>
-                <button>Ingresar</button>
-            </NavLink>
+            <div className={styles.divCartel}>
+                <h1 className={styles.h1}>E<span className={styles.span}>N</span>TER</h1>
+            </div>
+            </NavLink>         
         </div>
     )
 }

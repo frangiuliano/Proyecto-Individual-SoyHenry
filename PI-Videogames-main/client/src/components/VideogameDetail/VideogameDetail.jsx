@@ -1,8 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import {searchById} from '../../actions/index'
+import { NavLink, useParams } from "react-router-dom";
+import {cleanFilter, searchById} from '../../actions/index'
+import styles from './VideogameDetail.module.css'
 
 const Videogame = () => {
     
@@ -12,19 +13,45 @@ const Videogame = () => {
 
     useEffect (() => {
         dispatch(searchById(id))
+        return () => {
+            dispatch(cleanFilter())
+        }
     }, [dispatch, id])
 
     console.log(vgDetail)
 
     return (
         <div>
-            <h1>{vgDetail.name}</h1>,
-            <h2>{vgDetail.description_raw ? vgDetail.description_raw : vgDetail.description}</h2>,
-            <h3>{vgDetail.genres}</h3>,
-            <h3>{vgDetail.released ? vgDetail.released : vgDetail.release_date}</h3>,
-            <h4>{vgDetail.rating}</h4>,
-            <h5>{vgDetail.platforms}</h5>,
-            <img src={vgDetail.background_image} alt="img not fouuuuund" width= "200px" weight="250px"/> 
+            <div className={styles.navbar}>
+                <NavLink to="/videogames" className={styles.back}>
+                    <span>BACK TO HOME</span>
+                </NavLink>
+            </div>
+            {vgDetail?
+            <div className={styles.divGeneral}>
+                <div className={styles.divImg}>
+                    <img className={styles.img} src={vgDetail.background_image} alt="img not fouuuuund" width= "200px" weight="250px"/>         
+                </div>
+                <div className={styles.divGeneralInfo}>
+                    <div className={styles.divTitleGenres}>
+                        <p className={styles.title}>{vgDetail.name}</p>
+                        {vgDetail.genres?.map((e, index) => <p key={index} className={styles.genres}>{e + " "}</p> )} 
+                    </div>
+                    <div className={styles.labelDisponible}>
+                        <p>Available in</p>
+                        {typeof vgDetail.platforms === 'string' ? vgDetail.platforms : vgDetail.platforms?.map((e, index) => <p key={index} className={styles.platforms}>{e + " "}</p>)}
+                    </div>
+                    <div>
+                        <p className={styles.description}>{vgDetail.description_raw ? vgDetail.description_raw : vgDetail.description}</p>
+                    </div>
+                    <div className={styles.divRatingReleased}>
+                        <p className={styles.released}>Released: {vgDetail.released ? vgDetail.released : vgDetail.release_date}</p>
+                        <p className={styles.rating}>★ {vgDetail.rating}</p>
+                    </div>
+                </div>
+            </div>
+            : <h1>CARGANDO...</h1>
+            }
         </div>
     )
 }

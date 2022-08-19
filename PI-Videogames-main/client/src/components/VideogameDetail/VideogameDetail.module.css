@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(23, 23, 23);
+    padding-top: 47px;
+    padding-bottom: 46px;
+}
+
+.divGeneral{
+    font-family: 'Nova Round', cursive;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 60px;
+    margin-left: 250px;
+    margin-right: 100px;
+    background-color: rgb(23, 23, 23);
+    color: rgb(216, 216, 216);
+    border-color: rgb(216, 216, 216);
+    box-shadow: 0 0 30px rgb(216, 216, 216);
+    border-radius: 15px;
+    height: 650px;
+    width: 1500px;
+}
+
+.back {
+    font-family: 'Nova Round', cursive;
+    font-size: 14px;
+    text-decoration: none;
+    list-style: none;
+    color: rgb(216, 216, 216);
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative
+}
+
+.back::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: aqua;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.back:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+    box-shadow: 0 0 5px aqua;
+}
+
+.divImg{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 4000px;
+    height: 610px;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    position:relative;
+    max-width: 560px;
+    min-width: 560px;
+    max-height: 610px;
+    min-height: 610px;
+}
+
+.divGeneralInfo{
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.divTitleGenres{
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    width: 450px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+.description{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    padding-top: 80px;
+    padding-right: 70px;
+}
+
+.genres{
+    margin-left: 10px;
+    font-size: 13px;
+    background-color: aqua;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: rgb(23, 23, 23);
+}
+
+.released{
+    margin-top: 20px;
+    background-color: rgb(216, 216, 216);
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    color: rgb(23, 23, 23);
+    width: 200px;
+    text-align: center;
+}
+
+.rating{
+    margin-top: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    color: rgb(252, 255, 97);
+    width: 80px; 
+    border: 1px solid rgb(252, 255, 97);
+    text-align: center;   
+}
+
+.platforms{
+    margin-left: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 120, 235);
+    font-size: 12px;
+}
+
+.labelDisponible{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.divRatingReleased{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 75px;
+    margin-top: 80px;
+}

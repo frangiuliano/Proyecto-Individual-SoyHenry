@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Paginated.module.css"
 // import {videogamesPerPage, allVideogames, paginate} from '../Videogames/Videogames.jsx'
 
 const Paginated = ({videogamesPerPage, allVideogames, paginated}) => {
@@ -10,13 +11,15 @@ const Paginated = ({videogamesPerPage, allVideogames, paginated}) => {
 
     return (
         <nav>
-            <ul>
-                {pageNumbers?.map(number => (
-                    <li key={number}>
-                         <button onClick={() => paginated(number)}>{number}</button>
-                    </li>
-                ))}
-            </ul>
+            <div>
+                <ul className={styles.paginadoForma}>
+                    {pageNumbers?.map(number => (
+                            <li className={styles.paginadoForma1} key={number}>
+                                <div className={styles.button} onClick={() => paginated(number)}>{number}</div>
+                            </li>
+                    ))}
+                </ul>
+            </div>
         </nav>
     )
 }

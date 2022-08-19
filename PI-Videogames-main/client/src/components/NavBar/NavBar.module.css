@@ -3,10 +3,14 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     background-color:rgb(23, 23, 23);
     padding-top: 15px;
     padding-bottom: 15px;
+    position: fixed;
+    top:0;
+    z-index: 1;
+    width: 100%;
 }
 
 .div1{
@@ -82,4 +86,14 @@
     transform-origin: left;
     transform: scaleX(1);
     box-shadow: 0 0 5px rgb(255, 120, 235);
+}
+
+.span1{
+    width: 100px;
+    text-align: end;
+}
+
+.span2{
+    width: 100px;
+    padding-left: 10px;
 }

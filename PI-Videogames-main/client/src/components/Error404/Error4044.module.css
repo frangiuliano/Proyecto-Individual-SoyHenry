@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+
+.img{
+    height: 100vh;
+    background-image: url("../../Images/404NOTFOUND2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.opcion{
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    background-color: aqua;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: rgb(23, 23, 23);
+    width: 150px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 150px;
+}
+
+.opcion:hover{
+    border-color: rgb(216, 216, 216);
+    box-shadow: 0 0 15px rgb(216, 216, 216);
+    transform: scale(1.03);
+    transition-duration: 500ms;
+    cursor: pointer;
+}

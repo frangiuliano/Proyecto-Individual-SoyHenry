@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+
+.card{
+    font-family: 'Nova Round', cursive;
+    display: inline-block;
+    justify-content: center;
+    width: 350px;
+    height: 400px;
+    border-radius: 15px;
+    color: rgb(216, 216, 216);
+    background-color: rgb(23, 23, 23);  
+    outline: none;
+}
+
+.card:hover{
+    border-color: rgb(216, 216, 216);
+    box-shadow: 0 0 15px rgb(216, 216, 216);
+    transform: scale(1.03);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+.name{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.divImg{
+    display: flex;
+    width: 350px;
+    height: 250px;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    position:relative;
+}
+
+.genre{
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 2px;
+    margin-left: 10px;
+    font-size: 12px;
+    background-color: aqua;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: rgb(23, 23, 23);
+}
+
+.rating{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: rgb(252, 255, 97);
+}
+
+.divInfo{
+    width: 350px;
+    height: 50px;
+    margin-top: 8px;
+}
+
+.divInfo2{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+

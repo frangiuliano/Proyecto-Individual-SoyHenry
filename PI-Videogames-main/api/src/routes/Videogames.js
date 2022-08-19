@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         if (namesVideogames.length){
             return res.status(200).json(namesVideogames)
         }else{
-        return res.status(404).send(`No existen juegos con el nombre ${name}`)}
+        return res.status(200).send(['No existen juegos con ese nombre'])}
     }
     return res.status(200).json(totalVideogames)
 })

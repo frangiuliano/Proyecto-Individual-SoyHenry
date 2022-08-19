@@ -48,3 +48,7 @@ export const filterCreated = (payload) => {
     return {type: "FILTER_CREATED", payload}
 }
 
+export const cleanFilter = () => {
+    return {type: "CLEAN_FILTER", payload: []}
+}
+

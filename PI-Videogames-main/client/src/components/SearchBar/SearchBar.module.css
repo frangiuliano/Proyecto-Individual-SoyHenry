@@ -16,13 +16,19 @@
     border-color: rgb(252, 255, 97);
     box-shadow: 0 0 5px rgb(252, 255, 97);
     border: 5px;
+    outline: none;
+    color: rgb(216, 216, 216);
+}
+
+.searchInput:focus{
+    outline: none;
 }
 
 .icon{
     width: 32px;
     height: 29px;
     border-radius: 12px;
-    margin-left: 5px;
+    margin-left: 10px;
     background-color: rgb(23, 23, 23);
     border: none;
 }
@@ -30,10 +36,11 @@
 .icon:hover{
     border-color: rgb(252, 255, 97);
     box-shadow: 0 0 5px rgb(252, 255, 97);
-    transition-delay: 150ms;
+    transition-delay: 50ms;
+    transition-duration: 300ms;
 }
-
 
 .img{
     width: 18px;
+    cursor: pointer;
 }

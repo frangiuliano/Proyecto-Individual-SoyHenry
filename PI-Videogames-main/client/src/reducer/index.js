@@ -4,7 +4,7 @@ const initialState = {
     videogames: [],
     allVideogames: [],
     genres: [],
-    videogameDetail: {}
+    videogameDetail: []
 }
 
 function rootReducer (state = initialState, action){
@@ -16,7 +16,7 @@ function rootReducer (state = initialState, action){
         }
         case "GET_GENRES": return {
             ...state,
-            genres: [...action.payload]
+            genres: action.payload
         }
         case "GET_VIDEOGAME_BY_ID": return {
             ...state,
@@ -70,6 +70,11 @@ function rootReducer (state = initialState, action){
 
             else {
                 return {...state, vidoegames: state.allVideogames}
+            }
+        case "CLEAN_FILTER":
+            return {
+                ...state,
+                videogameDetail: action.payload
             }
         default: 
             return {...state} 

@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from "react"
 import { useDispatch } from "react-redux";
 import {searchByName} from "../../actions/index"
-import img from '../../../src/LupaSearch.png'
+import img from '../../Images/LupaSearch.png'
 import styles from "./SearchBar.module.css"
 
 const SearchBar = () => {

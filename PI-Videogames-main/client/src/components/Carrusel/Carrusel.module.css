@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+
+.divGeneral{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.container {
+    width: 100%;
+    padding-bottom: 30px;
+    background: #171717;
+    margin-top: 10px;
+}
+
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slider{
+    position: relative;
+    width: 100%;
+    height: 650px;
+}
+
+.sliderli{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    background-color: white;
+    transition: opacity .5s;
+}
+
+.sliderli:first-child{
+    opacity: 1;
+}
+
+.sliderli:target{
+    opacity: 1;
+}
+
+.img{
+    width: 100%;
+    height: 650px;
+    object-fit:cover;
+}
+
+.name{
+    font-family: 'Nova Round', cursive;
+    color: aqua;
+    text-transform: uppercase;
+    background-color: #171717;
+    width: 600px;
+    text-align: center;
+}
+
+.divName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.divName2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    background-color: #171717;
+}
+
+.menu{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.menuli{
+    display: inline-block;
+    text-align: center;
+}
+
+.a{
+    font-family: 'Nova Round', cursive;
+    display: inline-block;
+    color: rgb(216, 216, 216);
+    text-decoration: none;
+    background-color: rgb(93, 93, 93);
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 100%;
+    padding-top: 2px;
+    margin-left: 5px;
+}
+
+.a:hover{
+    color:rgb(23, 23, 23);
+    background-color: aqua;
+    transform: scale(1.3);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
